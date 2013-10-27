@@ -27,6 +27,7 @@ app.get "/", (req, res)->
 
 pill = require './models/pill'
 app.get "/pills/:name", pill.find
+app.post "/pills", pill.create
 
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
