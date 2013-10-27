@@ -34,6 +34,9 @@ app.post '/pills', pill.create
 conf = require './models/conf'
 app.post '/invite', conf.invite
 
+goodrx = require './external/goodrx'
+app.get '/pillPrices/:name', goodrx.getPrices
+
 ticket = require './models/ticket'
 #app.post '/ticket/:type', ticket.create
 
