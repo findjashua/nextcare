@@ -27,11 +27,15 @@ app.get '/', (req, res)->
 
 pill = require './models/pill'
 app.get '/pills', pill.list
-app.get '/pills/:productCode', pill.find
+app.get '/pills/productCode/:productCode', pill.findByProductCode
+app.get '/pills/name/:name', pill.findByName
 app.post '/pills', pill.create
 
 conf = require './models/conf'
 app.post '/invite', conf.invite
+
+ticket = require './models/ticket'
+#app.post '/ticket/:type', ticket.create
 
 http.createServer(app).listen app.get('port'), ->
   console.log 'Express server listening on port ' + app.get('port')
