@@ -26,6 +26,7 @@ app.get "/", (req, res)->
 	res.send 'server running'
 
 pill = require './models/pill'
+app.get "/pills", pill.list
 app.get "/pills/:name", pill.find
 app.post "/pills", pill.create
 

@@ -15,6 +15,10 @@ respond = (err, data, res)->
 	return res.send err if err?
 	return res.send data if data?
 
+exports.list = (req, res)->
+	Pill.find (err, data)->
+		respond err, data, res
+
 exports.find = (req, res)->
 	condition = {name : req.params.name}
 	Pill.findOne condition, (err, data)->
