@@ -19,13 +19,13 @@ saxStream.on 'text', (t)->
 		pill.productCode = t
 		
 	if stack[top] is 'RXSTRING'
-		pill.name = t.split('(')[0]
+		pill.name = t.split(' (')[0]
 		
 	if stack[top] is 'image_id'
 		pill.imageId = t
 		imageUrl = "http://pillbox.nlm.nih.gov/assets/small/#{t}.jpg"
 		pill.imageUrl = imageUrl
-		text = "{'pill.name': '#{pill.name}', \n'pill.productCode': '#{pill.productCode}', \n'pill.imageId': '#{pill.imageId}', \n'pill.imageUrl': '#{pill.imageUrl}'},\n"
+		text = "{'name': '#{pill.name}', \n'productCode': '#{pill.productCode}', \n'imageId': '#{pill.imageId}', \n'imageUrl': '#{pill.imageUrl}'},\n"
 		fs.appendFile './pill.json', text, (err)->
 			return console.log err if err?
 
