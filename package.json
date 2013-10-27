@@ -10,6 +10,7 @@
     "jade": "*",
 	"coffee-script": "latest",
     "require": "latest",
+	"needle": "latest",
 	"sax": "latest",
 	"mongoose": "latest"
   }
