@@ -20,12 +20,13 @@ exports.list = (req, res)->
 		respond err, data, res
 
 exports.find = (req, res)->
-	condition = {name : req.params.name}
+	condition = {productCode : req.params.productCode}
 	Pill.findOne condition, (err, data)->
-		respond err, data.imageUrl, res
+		respond err, data?.imageUrl, res
 
 exports.create = (req, res)->
 	pill = new Pill req.body
 	pill.save (err, data)->
 		respond err, data, res
+
 

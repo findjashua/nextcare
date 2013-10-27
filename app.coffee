@@ -27,7 +27,7 @@ app.get "/", (req, res)->
 
 pill = require './models/pill'
 app.get "/pills", pill.list
-app.get "/pills/:name", pill.find
+app.get "/pills/:productCode", pill.find
 app.post "/pills", pill.create
 
 http.createServer(app).listen app.get("port"), ->
