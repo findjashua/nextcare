@@ -12,6 +12,7 @@
     "require": "latest",
 	"needle": "latest",
 	"sax": "latest",
-	"mongoose": "latest"
+	"mongoose": "latest",
+	"emailjs": "latest"
   }
 }
